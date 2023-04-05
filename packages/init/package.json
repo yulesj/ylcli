@@ -17,6 +17,7 @@
     "test": "node ./__tests__/init.test.js"
   },
   "dependencies": {
-    "@ylcli.com/command": "^0.0.0"
+    "@ylcli.com/command": "^0.0.0",
+    "@ylcli.com/utils": "^0.0.0"
   }
 }

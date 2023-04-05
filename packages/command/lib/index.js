@@ -5,15 +5,21 @@ class Command {
     }
     this.program = instance;
     const cmd = this.program.command(this.command);
-    cmd.description(this.description)
-    if(this.options?.length > 0) {
-      this.options.forEach(option => {
-        cmd.option(...option)
-      })
-    }
-    cmd.action((name, opts) => {
-        console.log("init", name, opts);
+    cmd.description(this.description);
+    cmd.hook('preAction', () => {
+      this.preAction()
+    })
+    cmd.hook('postAction', () => {
+      this.postAction()
+    })
+    if (this.options?.length > 0) {
+      this.options.forEach((option) => {
+        cmd.option(...option);
       });
+    }
+    cmd.action((...params) => {
+      this.action(params);
+    });
   }
   get command() {
     throw new Error("command must be implements");
@@ -26,6 +32,14 @@ class Command {
   get options() {
     return [];
   }
+
+  get action() {
+    throw new Error("action must be implements");
+  }
+
+  preAction() {}
+
+  postAction() {}
 }
 
 module.exports = Command;
