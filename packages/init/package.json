@@ -13,6 +13,7 @@
   "files": [
     "lib"
   ],
+  "type": "module",
   "scripts": {
     "test": "node ./__tests__/init.test.js"
   },

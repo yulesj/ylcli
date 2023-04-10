@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const importLocal = require('import-local');
-const { log } = require('@ylcli.com/utils');
-const entry = require('../lib/index')
+import importLocal from 'import-local';
+import { log, dirOrFileName } from '@ylcli.com/utils';
+import entry from '../lib/index.js'
 
-if (importLocal(__filename)) {
+if (importLocal(dirOrFileName.__filename)) {
   log.info('cli', '使用本地cli-yl版本')
 } else {
   // 获取脚手架命令后面的参数

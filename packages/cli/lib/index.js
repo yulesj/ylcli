@@ -1,17 +1,17 @@
-const commander = require("commander");
-const semver = require("semver");
-const createInitCommand = require("@ylcli.com/init");
-const { log, isDebug } = require("@ylcli.com/utils");
-import  chalk from 'chalk'
+import { gte } from "semver"
+import { program } from 'commander';
+import createInitCommand from "@ylcli.com/init"
+import { log, isDebug } from "@ylcli.com/utils"
+import chalk from 'chalk'
 
-const { program } = commander;
-const pkg = require("../package.json");
+// const pkg = require("../package.json");
+const pkg = {}
 
 const LOWEST_NODE_VERSION = "17.0.0";
 
 function checkNodeVersion() {
   log.verbose("node version", process.version);
-  if (!semver.gte(process.version, LOWEST_NODE_VERSION)) {
+  if (!gte(process.version, LOWEST_NODE_VERSION)) {
     throw new Error(chalk.red(`cli-yl 需要安装${LOWEST_NODE_VERSION}以上版本Node.js`));
   }
 }
@@ -29,7 +29,7 @@ process.on("uncaughtException", (e) => {
   }
 });
 
-module.exports = function (args) {
+function setup (args) {
   program
     .name(Object.keys(pkg.bin)[0])
     .usage("<command> [options]")
@@ -44,3 +44,5 @@ module.exports = function (args) {
 
   program.parse(process.argv);
 };
+
+export default setup

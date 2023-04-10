@@ -1,5 +1,5 @@
-const { log } = require('@ylcli.com/utils')
-const Command = require('@ylcli.com/command');
+import { log } from '@ylcli.com/utils'
+import Command from '@ylcli.com/command'
 
 class InitCommand extends Command {
   get command() {
@@ -33,4 +33,4 @@ function Init(instance) {
   return new InitCommand(instance);
 }
 
-module.exports = Init;
+export default Init;

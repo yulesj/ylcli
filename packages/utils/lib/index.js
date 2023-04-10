@@ -1,8 +1,11 @@
-const log = require('./log')
+import log from './log.js'
 
-const isDebug = require('./isDebug')
+import isDebug from './isDebug.js'
 
-module.exports = {
+import dirOrFileName from './dirOrFileName.js'
+
+export {
   log,
-  isDebug
+  isDebug,
+  dirOrFileName
 }

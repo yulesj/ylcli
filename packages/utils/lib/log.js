@@ -1,5 +1,7 @@
-const log = require("npmlog");
-const isDebug = require('./isDebug')
+import log from "npmlog"
+console.log('asdsad')
+
+import isDebug from './isDebug.js'
 
 if (isDebug()) {
   log.level = "verbose";
@@ -9,7 +11,7 @@ if (isDebug()) {
 
 log.heading = 'yl-cli'
 
-log.addLevel('success', 2000, { fg: 'green', bg: 'yellow', bold: true});
+log.addLevel('success', 2000, { fg: 'green', bg: 'yellow', bold: true });
 
 
-module.exports = log;
+export default log;
