@@ -1,5 +1,4 @@
 import log from "npmlog"
-console.log('asdsad')
 
 import isDebug from './isDebug.js'
 

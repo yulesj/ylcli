@@ -1,13 +1,14 @@
+import fs from 'node:fs'
+import path from 'node:path'
+import chalk from 'chalk'
 import { gte } from "semver"
 import { program } from 'commander';
 import createInitCommand from "@ylcli.com/init"
 import { log, isDebug } from "@ylcli.com/utils"
-import chalk from 'chalk'
 
-// const pkg = require("../package.json");
-const pkg = {}
+const pkg = JSON.parse(fs.readFileSync(path.join('./package.json'),'utf-8'))
 
-const LOWEST_NODE_VERSION = "17.0.0";
+const LOWEST_NODE_VERSION = "14.0.0";
 
 function checkNodeVersion() {
   log.verbose("node version", process.version);
