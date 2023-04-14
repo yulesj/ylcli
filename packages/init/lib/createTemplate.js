@@ -26,6 +26,7 @@ const ADD_TYPE = [
     }
 ]
 
+
 export default function createTemplate (name, opts) {
     log.info(name,opts)
 }
