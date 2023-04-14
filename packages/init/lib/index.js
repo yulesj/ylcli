@@ -1,5 +1,6 @@
 import { log } from '@ylcli.com/utils'
 import Command from '@ylcli.com/command'
+import createTemplate from './createTemplate.js'
 
 class InitCommand extends Command {
   get command() {
@@ -18,6 +19,8 @@ class InitCommand extends Command {
 
   action([name,opts]) {
     log.verbose('init', name, opts)
+    // 1、选择项目模板，生成项目信息
+    createTemplate(name,opts)
   }
 
   preAction() {
