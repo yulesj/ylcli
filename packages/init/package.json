@@ -19,6 +19,10 @@
   },
   "dependencies": {
     "@ylcli.com/command": "^0.0.0",
-    "@ylcli.com/utils": "^0.0.0"
+    "@ylcli.com/utils": "^0.0.0",
+    "execa": "^7.1.1",
+    "fs-extra": "^11.1.1",
+    "ora": "^6.3.0",
+    "path-exists": "^5.0.0"
   }
 }

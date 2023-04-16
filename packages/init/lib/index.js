@@ -1,6 +1,8 @@
 import { log } from '@ylcli.com/utils'
 import Command from '@ylcli.com/command'
 import createTemplate from './createTemplate.js'
+import downloadTemplate from './downloadTemplate.js'
+import installTemplate from './installTemplate.js'
 
 class InitCommand extends Command {
   get command() {
@@ -17,10 +19,14 @@ class InitCommand extends Command {
     ]
   }
 
-  action([name,opts]) {
+  async action([name,opts]) {
     log.verbose('init', name, opts)
     // 1、选择项目模板，生成项目信息
-    createTemplate(name,opts)
+    const templateInfo = await createTemplate(name,opts)
+    // 2、下载项目模板至缓存目录
+    await downloadTemplate(templateInfo);
+    // 3、安装项目模板至目录
+    await installTemplate(templateInfo, opts)
   }
 
   preAction() {
