@@ -4,33 +4,34 @@ import { log, makeInput, makeList, getLatestVersion } from '@ylcli.com/utils'
 
 const ADD_TYPE_PROJECT = 'project'
 const ADD_TYPE_PAGE = 'page'
-// const ADD_TEMPLATE = [
-//     {
-//         name:'无人值守 uniapp 项目模板',
-//         npmName: '@lk-template/uni-h5app',
-//         version: '0.0.0',
-//         vale: ''
-//     },
-//     {
-//         name:'vue3 项目模板',
-//         npmName: '@lk-template/vue3',
-//         version: '0.0.1'
-//     }
-// ]
 const ADD_TEMPLATE = [
     {
-        name:'vue3 项目模板',
-        npmName: '@imooc.com/template-vue3',
-        version: '1.0.1',
-        value: 'template-vue3'
+        name:'无人值守 uniapp 项目模板',
+        npmName: '@lk-template/uni-h5app',
+        version: '0.0.0',
+        value: 'uni-h5app'
     },
     {
-        name:'react18项目模板',
-        npmName: '@imooc.com/template-react18',
-        version: '1.0.0',
-        value: 'template-react18'
+        name:'vue3 项目模板',
+        npmName: '@lk-template/vue3',
+        version: '0.0.1',
+        value: 'vue3'
     }
 ]
+// const ADD_TEMPLATE = [
+//     {
+//         name:'vue3 项目模板',
+//         npmName: '@imooc.com/template-vue3',
+//         version: '1.0.1',
+//         value: 'template-vue3'
+//     },
+//     {
+//         name:'react18项目模板',
+//         npmName: '@imooc.com/template-react18',
+//         version: '1.0.0',
+//         value: 'template-react18'
+//     }
+// ]
 const ADD_TYPE = [
     {
         name: '项目',

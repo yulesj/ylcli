@@ -3,7 +3,8 @@ import axios from "axios";
 import log from './log.js'
 
 async function getNpmInfo(npmName) {
-  const registry = "https://registry.npmjs.org/";
+  // const registry = "https://registry.npmjs.org/";
+  const registry = "http://cloud43.linkingcloudaliyun.cn:4873/";
   const url = urlJoin(registry, npmName);
   try {
     const response = await axios.get(url);
